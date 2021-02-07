@@ -21,7 +21,7 @@ class Argonautes{
     }
     _initEvents = () => {
         this._nameInput.addEventListener('change', (e) => {
-            this._inputValue = e.target.value;
+            this._inputValue = e.target.value.trim();
         });
 
         this._submitBtn.addEventListener('click', (e) => {
