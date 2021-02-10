@@ -22,7 +22,7 @@ class ErrorSystem{
     isInputValid = (value) => {
         try{
             if(!this._isLengthCorrect(value)) throw new Error("Veuillez remplir le nom de l'argonaute choisi.");
-            if(!this._isValidCharacters(value)) throw new Error("Veuillez n'utiliser que des lettres, espace ou tiret -");
+            if(!this._isValidCharacters(value)) throw new Error("Veuillez n'utiliser que des lettres, espace, apostrophe ou tiret -");
             
             this._toggleErrorMessageVisibility();
             return true;
@@ -43,7 +43,7 @@ class ErrorSystem{
 
     _isValidCharacters = (value) => {
         // Ce regex cherche les lettres, les espaces et le tiret -, tout autre caractère est interdit.
-        const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s-]*$/;
+        const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s-']*$/;
         return regex.test(value);
     }
 

@@ -26,8 +26,7 @@ async function createArgonaute(){
     if(val.status === 200){
         argonautes.push(inputValue);
         addArgonauteToListe();
-        inputValue = "";
-        input.value = "";
+        reinitializeInput();
     }
 }
 
@@ -49,6 +48,11 @@ function addArgonauteToListe(name){
     div.classList.add('member-item');
     div.innerText = name || inputValue;
     listContainer.appendChild(div);
+}
+
+function reinitializeInput(){
+    inputValue = "";
+    input.value = "";
 }
 
 window.onload = function(){
